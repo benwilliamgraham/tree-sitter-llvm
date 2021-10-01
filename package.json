@@ -1,0 +1,26 @@
+{
+  "name": "tree-sitter-llvm",
+  "version": "1.0.0",
+  "description": "Tree sitter parser for LLVM",
+  "main": "bindings/node",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benwilliamgraham/tree-sitter-llvm.git"
+  },
+  "author": "Benjamin Graham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benwilliamgraham/tree-sitter-llvm/issues"
+  },
+  "homepage": "https://github.com/benwilliamgraham/tree-sitter-llvm#readme",
+  "dependencies": {
+    "nan": "^2.15.0"
+  },
+  "devDependencies": {
+    "prettier": "2.4.1",
+    "tree-sitter-cli": "^0.20.0"
+  }
+}
