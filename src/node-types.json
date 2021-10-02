@@ -1,125 +1,35 @@
 [
   {
-    "type": "addr_space",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "integer",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "array_type",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "type",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "boolean",
     "named": true,
     "fields": {}
   },
   {
-    "type": "character_array",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "dll_storage_class",
+    "type": "constant",
     "named": true,
     "fields": {}
   },
   {
-    "type": "floating_point_type",
+    "type": "float",
     "named": true,
     "fields": {}
   },
   {
-    "type": "global_constant",
+    "type": "identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "module",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "addr_space",
-          "named": true
-        },
-        {
-          "type": "dll_storage_class",
-          "named": true
-        },
-        {
-          "type": "externally_initialized",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "initializer_constant",
-          "named": true
-        },
-        {
-          "type": "linkage",
-          "named": true
-        },
-        {
-          "type": "preemption_specifier",
-          "named": true
-        },
-        {
-          "type": "thread_local",
-          "named": true
-        },
-        {
-          "type": "type",
-          "named": true
-        },
-        {
-          "type": "visibility",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "initializer_constant",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
       "required": false,
       "types": [
         {
@@ -127,44 +37,45 @@
           "named": true
         },
         {
-          "type": "character_array",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "integer",
+          "type": "constant",
           "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "integer_type",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
+        },
         {
-          "type": "integer",
+          "type": "float",
           "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "linkage",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "pointer_type",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "punctuation",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
         {
           "type": "type",
           "named": true
@@ -173,85 +84,27 @@
     }
   },
   {
-    "type": "preemption_specifier",
+    "type": "punctuation",
     "named": true,
     "fields": {}
   },
   {
-    "type": "source_file",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "function_declaration",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "global_constant",
-          "named": true
-        },
-        {
-          "type": "named_metadata",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "thread_local",
+    "type": "statement",
     "named": true,
     "fields": {}
   },
   {
     "type": "type",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "array_type",
-          "named": true
-        },
-        {
-          "type": "floating_point_type",
-          "named": true
-        },
-        {
-          "type": "integer_type",
-          "named": true
-        },
-        {
-          "type": "pointer_type",
-          "named": true
-        },
-        {
-          "type": "structure_type",
-          "named": true
-        },
-        {
-          "type": "vector_type",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
-    "type": "visibility",
-    "named": true,
-    "fields": {}
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
   },
   {
     "type": ")",
@@ -262,11 +115,11 @@
     "named": false
   },
   {
-    "type": "=",
+    "type": ",",
     "named": false
   },
   {
-    "type": "TODO initializer_constant",
+    "type": "=",
     "named": false
   },
   {
@@ -278,7 +131,51 @@
     "named": false
   },
   {
-    "type": "addrspace(",
+    "type": "acq_rel",
+    "named": false
+  },
+  {
+    "type": "acquire",
+    "named": false
+  },
+  {
+    "type": "add",
+    "named": false
+  },
+  {
+    "type": "addrspace",
+    "named": false
+  },
+  {
+    "type": "addrspacecast",
+    "named": false
+  },
+  {
+    "type": "alias",
+    "named": false
+  },
+  {
+    "type": "align",
+    "named": false
+  },
+  {
+    "type": "alignstack",
+    "named": false
+  },
+  {
+    "type": "alloca",
+    "named": false
+  },
+  {
+    "type": "allocsize",
+    "named": false
+  },
+  {
+    "type": "alwaysinline",
+    "named": false
+  },
+  {
+    "type": "and",
     "named": false
   },
   {
@@ -286,7 +183,43 @@
     "named": false
   },
   {
-    "type": "availible_externally",
+    "type": "arcp",
+    "named": false
+  },
+  {
+    "type": "argmemonly",
+    "named": false
+  },
+  {
+    "type": "arm_aapcs_vfpcc",
+    "named": false
+  },
+  {
+    "type": "arm_aapcscc",
+    "named": false
+  },
+  {
+    "type": "arm_apcscc",
+    "named": false
+  },
+  {
+    "type": "ashr",
+    "named": false
+  },
+  {
+    "type": "asm",
+    "named": false
+  },
+  {
+    "type": "atomic",
+    "named": false
+  },
+  {
+    "type": "atomicrmw",
+    "named": false
+  },
+  {
+    "type": "available_externally",
     "named": false
   },
   {
@@ -294,7 +227,95 @@
     "named": false
   },
   {
+    "type": "bitcast",
+    "named": false
+  },
+  {
+    "type": "blockaddress",
+    "named": false
+  },
+  {
+    "type": "br",
+    "named": false
+  },
+  {
+    "type": "builtin",
+    "named": false
+  },
+  {
+    "type": "byref",
+    "named": false
+  },
+  {
+    "type": "byval",
+    "named": false
+  },
+  {
     "type": "c",
+    "named": false
+  },
+  {
+    "type": "call",
+    "named": false
+  },
+  {
+    "type": "callbr",
+    "named": false
+  },
+  {
+    "type": "caller",
+    "named": false
+  },
+  {
+    "type": "catch",
+    "named": false
+  },
+  {
+    "type": "catchpad",
+    "named": false
+  },
+  {
+    "type": "catchret",
+    "named": false
+  },
+  {
+    "type": "catchswitch",
+    "named": false
+  },
+  {
+    "type": "cc",
+    "named": false
+  },
+  {
+    "type": "ccc",
+    "named": false
+  },
+  {
+    "type": "cleanup",
+    "named": false
+  },
+  {
+    "type": "cleanuppad",
+    "named": false
+  },
+  {
+    "type": "cleanupret",
+    "named": false
+  },
+  {
+    "type": "cmpxchg",
+    "named": false
+  },
+  {
+    "type": "cold",
+    "named": false
+  },
+  {
+    "type": "coldcc",
+    "named": false
+  },
+  {
+    "type": "comdat",
     "named": false
   },
   {
@@ -310,7 +331,39 @@
     "named": false
   },
   {
+    "type": "convergent",
+    "named": false
+  },
+  {
+    "type": "datalayout",
+    "named": false
+  },
+  {
+    "type": "declare",
+    "named": false
+  },
+  {
     "type": "default",
+    "named": false
+  },
+  {
+    "type": "define",
+    "named": false
+  },
+  {
+    "type": "deplibs",
+    "named": false
+  },
+  {
+    "type": "dereferenceable",
+    "named": false
+  },
+  {
+    "type": "dereferenceable_or_null",
+    "named": false
+  },
+  {
+    "type": "distinct",
     "named": false
   },
   {
@@ -334,6 +387,18 @@
     "named": false
   },
   {
+    "type": "eq",
+    "named": false
+  },
+  {
+    "type": "exact",
+    "named": false
+  },
+  {
+    "type": "except",
+    "named": false
+  },
+  {
     "type": "extern_weak",
     "named": false
   },
@@ -343,10 +408,46 @@
   },
   {
     "type": "externally_initialized",
-    "named": true
+    "named": false
+  },
+  {
+    "type": "extractelement",
+    "named": false
+  },
+  {
+    "type": "extractvalue",
+    "named": false
+  },
+  {
+    "type": "fadd",
+    "named": false
   },
   {
     "type": "false",
+    "named": false
+  },
+  {
+    "type": "fast",
+    "named": false
+  },
+  {
+    "type": "fastcc",
+    "named": false
+  },
+  {
+    "type": "fcmp",
+    "named": false
+  },
+  {
+    "type": "fdiv",
+    "named": false
+  },
+  {
+    "type": "fence",
+    "named": false
+  },
+  {
+    "type": "filter",
     "named": false
   },
   {
@@ -354,16 +455,60 @@
     "named": false
   },
   {
+    "type": "fmul",
+    "named": false
+  },
+  {
+    "type": "fneg",
+    "named": false
+  },
+  {
     "type": "fp128",
     "named": false
   },
   {
-    "type": "function_declaration",
-    "named": true
+    "type": "fpext",
+    "named": false
   },
   {
-    "type": "function_definition",
-    "named": true
+    "type": "fptosi",
+    "named": false
+  },
+  {
+    "type": "fptoui",
+    "named": false
+  },
+  {
+    "type": "fptrunc",
+    "named": false
+  },
+  {
+    "type": "free",
+    "named": false
+  },
+  {
+    "type": "freeze",
+    "named": false
+  },
+  {
+    "type": "frem",
+    "named": false
+  },
+  {
+    "type": "from",
+    "named": false
+  },
+  {
+    "type": "fsub",
+    "named": false
+  },
+  {
+    "type": "gc",
+    "named": false
+  },
+  {
+    "type": "getelementptr",
+    "named": false
   },
   {
     "type": "global",
@@ -374,31 +519,103 @@
     "named": false
   },
   {
+    "type": "hhvm_ccc",
+    "named": false
+  },
+  {
+    "type": "hhvmcc",
+    "named": false
+  },
+  {
     "type": "hidden",
     "named": false
   },
   {
-    "type": "i",
+    "type": "hot",
     "named": false
   },
   {
-    "type": "identifier",
-    "named": true
+    "type": "icmp",
+    "named": false
+  },
+  {
+    "type": "immarg",
+    "named": false
+  },
+  {
+    "type": "inaccessiblemem_or_argmemonly",
+    "named": false
+  },
+  {
+    "type": "inaccessiblememonly",
+    "named": false
+  },
+  {
+    "type": "inalloca",
+    "named": false
+  },
+  {
+    "type": "inbounds",
+    "named": false
+  },
+  {
+    "type": "indirectbr",
+    "named": false
   },
   {
     "type": "initialexec",
     "named": false
   },
   {
-    "type": "integer",
-    "named": true
+    "type": "inlinehint",
+    "named": false
+  },
+  {
+    "type": "inreg",
+    "named": false
+  },
+  {
+    "type": "insertelement",
+    "named": false
+  },
+  {
+    "type": "insertvalue",
+    "named": false
+  },
+  {
+    "type": "intel_ocl_bicc",
+    "named": false
+  },
+  {
+    "type": "inteldialect",
+    "named": false
   },
   {
     "type": "internal",
     "named": false
   },
   {
+    "type": "inttoptr",
+    "named": false
+  },
+  {
+    "type": "invoke",
+    "named": false
+  },
+  {
+    "type": "jumptable",
+    "named": false
+  },
+  {
     "type": "label",
+    "named": true
+  },
+  {
+    "type": "label",
+    "named": false
+  },
+  {
+    "type": "landingpad",
     "named": false
   },
   {
@@ -407,6 +624,10 @@
   },
   {
     "type": "linkonce_odr",
+    "named": false
+  },
+  {
+    "type": "load",
     "named": false
   },
   {
@@ -422,15 +643,247 @@
     "named": false
   },
   {
+    "type": "lshr",
+    "named": false
+  },
+  {
+    "type": "malloc",
+    "named": false
+  },
+  {
+    "type": "max",
+    "named": false
+  },
+  {
     "type": "metadata",
     "named": false
   },
   {
-    "type": "named_metadata",
+    "type": "min",
+    "named": false
+  },
+  {
+    "type": "minsize",
+    "named": false
+  },
+  {
+    "type": "module",
+    "named": false
+  },
+  {
+    "type": "monotonic",
+    "named": false
+  },
+  {
+    "type": "msp430_intrcc",
+    "named": false
+  },
+  {
+    "type": "mul",
+    "named": false
+  },
+  {
+    "type": "mustprogress",
+    "named": false
+  },
+  {
+    "type": "musttail",
+    "named": false
+  },
+  {
+    "type": "naked",
+    "named": false
+  },
+  {
+    "type": "nand",
+    "named": false
+  },
+  {
+    "type": "ne",
+    "named": false
+  },
+  {
+    "type": "nest",
+    "named": false
+  },
+  {
+    "type": "ninf",
+    "named": false
+  },
+  {
+    "type": "nnan",
+    "named": false
+  },
+  {
+    "type": "noalias",
+    "named": false
+  },
+  {
+    "type": "nobuiltin",
+    "named": false
+  },
+  {
+    "type": "nocallback",
+    "named": false
+  },
+  {
+    "type": "nocapture",
+    "named": false
+  },
+  {
+    "type": "nocf_check",
+    "named": false
+  },
+  {
+    "type": "noduplicate",
+    "named": false
+  },
+  {
+    "type": "nofree",
+    "named": false
+  },
+  {
+    "type": "noimplicitfloat",
+    "named": false
+  },
+  {
+    "type": "noinline",
+    "named": false
+  },
+  {
+    "type": "nomerge",
+    "named": false
+  },
+  {
+    "type": "none",
+    "named": false
+  },
+  {
+    "type": "nonlazybind",
+    "named": false
+  },
+  {
+    "type": "nonnull",
+    "named": false
+  },
+  {
+    "type": "noprofile",
+    "named": false
+  },
+  {
+    "type": "norecurse",
+    "named": false
+  },
+  {
+    "type": "noredzone",
+    "named": false
+  },
+  {
+    "type": "noreturn",
+    "named": false
+  },
+  {
+    "type": "nosanitize_coverage",
+    "named": false
+  },
+  {
+    "type": "nosync",
+    "named": false
+  },
+  {
+    "type": "noundef",
+    "named": false
+  },
+  {
+    "type": "nounwind",
+    "named": false
+  },
+  {
+    "type": "nsw",
+    "named": false
+  },
+  {
+    "type": "nsz",
+    "named": false
+  },
+  {
+    "type": "null",
+    "named": false
+  },
+  {
+    "type": "null_pointer_is_valid",
+    "named": false
+  },
+  {
+    "type": "number",
     "named": true
   },
   {
-    "type": "ppc_fp128",
+    "type": "nuw",
+    "named": false
+  },
+  {
+    "type": "oeq",
+    "named": false
+  },
+  {
+    "type": "oge",
+    "named": false
+  },
+  {
+    "type": "ogt",
+    "named": false
+  },
+  {
+    "type": "ole",
+    "named": false
+  },
+  {
+    "type": "olt",
+    "named": false
+  },
+  {
+    "type": "one",
+    "named": false
+  },
+  {
+    "type": "optforfuzzing",
+    "named": false
+  },
+  {
+    "type": "optnone",
+    "named": false
+  },
+  {
+    "type": "optsize",
+    "named": false
+  },
+  {
+    "type": "or",
+    "named": false
+  },
+  {
+    "type": "ord",
+    "named": false
+  },
+  {
+    "type": "pcc_fp128",
+    "named": false
+  },
+  {
+    "type": "personality",
+    "named": false
+  },
+  {
+    "type": "phi",
+    "named": false
+  },
+  {
+    "type": "poison",
+    "named": false
+  },
+  {
+    "type": "preallocated",
     "named": false
   },
   {
@@ -442,15 +895,231 @@
     "named": false
   },
   {
+    "type": "ptrtoint",
+    "named": false
+  },
+  {
+    "type": "ptx_device",
+    "named": false
+  },
+  {
+    "type": "ptx_kernel",
+    "named": false
+  },
+  {
+    "type": "readnone",
+    "named": false
+  },
+  {
+    "type": "readonly",
+    "named": false
+  },
+  {
+    "type": "release",
+    "named": false
+  },
+  {
+    "type": "resume",
+    "named": false
+  },
+  {
+    "type": "ret",
+    "named": false
+  },
+  {
+    "type": "returned",
+    "named": false
+  },
+  {
+    "type": "returns_twice",
+    "named": false
+  },
+  {
+    "type": "safestack",
+    "named": false
+  },
+  {
+    "type": "sanitize_address",
+    "named": false
+  },
+  {
+    "type": "sanitize_hwaddress",
+    "named": false
+  },
+  {
+    "type": "sanitize_memory",
+    "named": false
+  },
+  {
+    "type": "sanitize_memtag",
+    "named": false
+  },
+  {
+    "type": "sanitize_thread",
+    "named": false
+  },
+  {
+    "type": "sdiv",
+    "named": false
+  },
+  {
+    "type": "section",
+    "named": false
+  },
+  {
+    "type": "select",
+    "named": false
+  },
+  {
+    "type": "seq_cst",
+    "named": false
+  },
+  {
+    "type": "sext",
+    "named": false
+  },
+  {
+    "type": "sge",
+    "named": false
+  },
+  {
+    "type": "sgt",
+    "named": false
+  },
+  {
+    "type": "shadowcallstack",
+    "named": false
+  },
+  {
+    "type": "shl",
+    "named": false
+  },
+  {
+    "type": "shufflevector",
+    "named": false
+  },
+  {
+    "type": "sideeffect",
+    "named": false
+  },
+  {
+    "type": "signext",
+    "named": false
+  },
+  {
+    "type": "sitofp",
+    "named": false
+  },
+  {
+    "type": "sle",
+    "named": false
+  },
+  {
+    "type": "slt",
+    "named": false
+  },
+  {
+    "type": "source_filename",
+    "named": false
+  },
+  {
+    "type": "speculatable",
+    "named": false
+  },
+  {
+    "type": "speculative_load_hardening",
+    "named": false
+  },
+  {
+    "type": "spir_func",
+    "named": false
+  },
+  {
+    "type": "spir_kernel",
+    "named": false
+  },
+  {
+    "type": "srem",
+    "named": false
+  },
+  {
+    "type": "sret",
+    "named": false
+  },
+  {
+    "type": "ssp",
+    "named": false
+  },
+  {
+    "type": "sspreq",
+    "named": false
+  },
+  {
+    "type": "sspstrong",
+    "named": false
+  },
+  {
+    "type": "store",
+    "named": false
+  },
+  {
+    "type": "strictfp",
+    "named": false
+  },
+  {
     "type": "string",
     "named": true
   },
   {
-    "type": "structure_type",
-    "named": true
+    "type": "sub",
+    "named": false
   },
   {
-    "type": "token",
+    "type": "swiftcc",
+    "named": false
+  },
+  {
+    "type": "swifterror",
+    "named": false
+  },
+  {
+    "type": "swiftself",
+    "named": false
+  },
+  {
+    "type": "swifttailcc",
+    "named": false
+  },
+  {
+    "type": "switch",
+    "named": false
+  },
+  {
+    "type": "syncscope",
+    "named": false
+  },
+  {
+    "type": "tail",
+    "named": false
+  },
+  {
+    "type": "tailcc",
+    "named": false
+  },
+  {
+    "type": "target",
+    "named": false
+  },
+  {
+    "type": "thread_local",
+    "named": false
+  },
+  {
+    "type": "to",
+    "named": false
+  },
+  {
+    "type": "triple",
     "named": false
   },
   {
@@ -458,15 +1127,103 @@
     "named": false
   },
   {
+    "type": "trunc",
+    "named": false
+  },
+  {
+    "type": "udiv",
+    "named": false
+  },
+  {
+    "type": "ueq",
+    "named": false
+  },
+  {
+    "type": "uge",
+    "named": false
+  },
+  {
+    "type": "ugt",
+    "named": false
+  },
+  {
+    "type": "uitofp",
+    "named": false
+  },
+  {
+    "type": "ule",
+    "named": false
+  },
+  {
+    "type": "ult",
+    "named": false
+  },
+  {
+    "type": "umax",
+    "named": false
+  },
+  {
+    "type": "umin",
+    "named": false
+  },
+  {
+    "type": "undef",
+    "named": false
+  },
+  {
+    "type": "une",
+    "named": false
+  },
+  {
     "type": "unnamed_addr",
     "named": false
   },
   {
-    "type": "vector_type",
-    "named": true
+    "type": "uno",
+    "named": false
+  },
+  {
+    "type": "unordered",
+    "named": false
+  },
+  {
+    "type": "unreachable",
+    "named": false
+  },
+  {
+    "type": "unwind",
+    "named": false
+  },
+  {
+    "type": "urem",
+    "named": false
+  },
+  {
+    "type": "uselistorder",
+    "named": false
+  },
+  {
+    "type": "uselistorder_bb",
+    "named": false
+  },
+  {
+    "type": "uwtable",
+    "named": false
+  },
+  {
+    "type": "va_arg",
+    "named": false
   },
   {
     "type": "void",
+    "named": false
+  },
+  {
+    "type": "volatile",
+    "named": false
+  },
+  {
+    "type": "vscale",
     "named": false
   },
   {
@@ -478,11 +1235,35 @@
     "named": false
   },
   {
+    "type": "willreturn",
+    "named": false
+  },
+  {
+    "type": "win64cc",
+    "named": false
+  },
+  {
+    "type": "within",
+    "named": false
+  },
+  {
+    "type": "writeonly",
+    "named": false
+  },
+  {
     "type": "x",
     "named": false
   },
   {
+    "type": "x86_64_sysvcc",
+    "named": false
+  },
+  {
     "type": "x86_amx",
+    "named": false
+  },
+  {
+    "type": "x86_fastcallcc",
     "named": false
   },
   {
@@ -491,6 +1272,42 @@
   },
   {
     "type": "x86_mmx",
+    "named": false
+  },
+  {
+    "type": "x86_stdcallcc",
+    "named": false
+  },
+  {
+    "type": "x86_thiscallcc",
+    "named": false
+  },
+  {
+    "type": "xchg",
+    "named": false
+  },
+  {
+    "type": "xor",
+    "named": false
+  },
+  {
+    "type": "zeroext",
+    "named": false
+  },
+  {
+    "type": "zeroinitializer",
+    "named": false
+  },
+  {
+    "type": "zext",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
     "named": false
   }
 ]

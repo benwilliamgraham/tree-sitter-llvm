@@ -1,326 +1,61 @@
 {
   "name": "LLVM",
   "rules": {
-    "source_file": {
+    "module": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "_expression"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "type"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "statement"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "number"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "comment"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "string"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "label"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "keyword"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "boolean"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "float"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "constant"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "punctuation"
+          }
+        ]
       }
-    },
-    "_expression": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "comment"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "function_declaration"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "function_definition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "global_constant"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "named_metadata"
-        }
-      ]
-    },
-    "comment": {
-      "type": "PATTERN",
-      "value": ";.*"
-    },
-    "function_declaration": {
-      "type": "STRING",
-      "value": ".*"
-    },
-    "function_definition": {
-      "type": "STRING",
-      "value": "f.*"
-    },
-    "global_constant": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
-        },
-        {
-          "type": "STRING",
-          "value": "="
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "linkage"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "preemption_specifier"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "visibility"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "dll_storage_class"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "thread_local"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "unnamed_addr"
-                },
-                {
-                  "type": "STRING",
-                  "value": "local_unnamed_addr"
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "addr_space"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "externally_initialized"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "global"
-            },
-            {
-              "type": "STRING",
-              "value": "constant"
-            }
-          ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "type"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "initializer_constant"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
-    },
-    "linkage": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "private"
-        },
-        {
-          "type": "STRING",
-          "value": "internal"
-        },
-        {
-          "type": "STRING",
-          "value": "availible_externally"
-        },
-        {
-          "type": "STRING",
-          "value": "linkonce"
-        },
-        {
-          "type": "STRING",
-          "value": "weak"
-        },
-        {
-          "type": "STRING",
-          "value": "common"
-        },
-        {
-          "type": "STRING",
-          "value": "appending"
-        },
-        {
-          "type": "STRING",
-          "value": "extern_weak"
-        },
-        {
-          "type": "STRING",
-          "value": "linkonce_odr"
-        },
-        {
-          "type": "STRING",
-          "value": "weak_odr"
-        },
-        {
-          "type": "STRING",
-          "value": "external"
-        }
-      ]
-    },
-    "preemption_specifier": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "dso_preemptable"
-        },
-        {
-          "type": "STRING",
-          "value": "dso_local"
-        }
-      ]
-    },
-    "visibility": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "default"
-        },
-        {
-          "type": "STRING",
-          "value": "hidden"
-        },
-        {
-          "type": "STRING",
-          "value": "protected"
-        }
-      ]
-    },
-    "dll_storage_class": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "dllimport"
-        },
-        {
-          "type": "STRING",
-          "value": "dllexport"
-        }
-      ]
-    },
-    "thread_local": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "localdynamic"
-        },
-        {
-          "type": "STRING",
-          "value": "initialexec"
-        },
-        {
-          "type": "STRING",
-          "value": "localexec"
-        }
-      ]
-    },
-    "addr_space": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "addrspace("
-        },
-        {
-          "type": "SYMBOL",
-          "name": "integer"
-        },
-        {
-          "type": "STRING",
-          "value": ")"
-        }
-      ]
-    },
-    "externally_initialized": {
-      "type": "STRING",
-      "value": "externally_initialized"
     },
     "type": {
       "type": "CHOICE",
@@ -329,68 +64,6 @@
           "type": "STRING",
           "value": "void"
         },
-        {
-          "type": "SYMBOL",
-          "name": "integer_type"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "floating_point_type"
-        },
-        {
-          "type": "STRING",
-          "value": "x86_amx"
-        },
-        {
-          "type": "STRING",
-          "value": "x86_mmx"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "pointer_type"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "vector_type"
-        },
-        {
-          "type": "STRING",
-          "value": "label"
-        },
-        {
-          "type": "STRING",
-          "value": "token"
-        },
-        {
-          "type": "STRING",
-          "value": "metadata"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "array_type"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "structure_type"
-        }
-      ]
-    },
-    "integer_type": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "i"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "integer"
-        }
-      ]
-    },
-    "floating_point_type": {
-      "type": "CHOICE",
-      "members": [
         {
           "type": "STRING",
           "value": "half"
@@ -409,92 +82,1140 @@
         },
         {
           "type": "STRING",
-          "value": "fp128"
-        },
-        {
-          "type": "STRING",
           "value": "x86_fp80"
         },
         {
           "type": "STRING",
-          "value": "ppc_fp128"
-        }
-      ]
-    },
-    "pointer_type": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "type"
+          "value": "fp128"
         },
         {
           "type": "STRING",
-          "value": "*"
+          "value": "pcc_fp128"
+        },
+        {
+          "type": "STRING",
+          "value": "label"
+        },
+        {
+          "type": "STRING",
+          "value": "metadata"
+        },
+        {
+          "type": "STRING",
+          "value": "x86_mmx"
+        },
+        {
+          "type": "STRING",
+          "value": "x86_amx"
+        },
+        {
+          "type": "PATTERN",
+          "value": "i\\d+"
         }
       ]
     },
-    "vector_type": {
-      "type": "STRING",
-      "value": "TODO vector_type"
-    },
-    "array_type": {
-      "type": "SEQ",
+    "statement": {
+      "type": "CHOICE",
       "members": [
         {
           "type": "STRING",
-          "value": "["
+          "value": "add"
         },
         {
-          "type": "SYMBOL",
-          "name": "integer"
+          "type": "STRING",
+          "value": "addrspacecast"
+        },
+        {
+          "type": "STRING",
+          "value": "alloca"
+        },
+        {
+          "type": "STRING",
+          "value": "and"
+        },
+        {
+          "type": "STRING",
+          "value": "arcp"
+        },
+        {
+          "type": "STRING",
+          "value": "ashr"
+        },
+        {
+          "type": "STRING",
+          "value": "atomicrmw"
+        },
+        {
+          "type": "STRING",
+          "value": "bitcast"
+        },
+        {
+          "type": "STRING",
+          "value": "br"
+        },
+        {
+          "type": "STRING",
+          "value": "catchpad"
+        },
+        {
+          "type": "STRING",
+          "value": "catchswitch"
+        },
+        {
+          "type": "STRING",
+          "value": "catchret"
+        },
+        {
+          "type": "STRING",
+          "value": "call"
+        },
+        {
+          "type": "STRING",
+          "value": "callbr"
+        },
+        {
+          "type": "STRING",
+          "value": "cleanuppad"
+        },
+        {
+          "type": "STRING",
+          "value": "cleanupret"
+        },
+        {
+          "type": "STRING",
+          "value": "cmpxchg"
+        },
+        {
+          "type": "STRING",
+          "value": "eq"
+        },
+        {
+          "type": "STRING",
+          "value": "exact"
+        },
+        {
+          "type": "STRING",
+          "value": "extractelement"
+        },
+        {
+          "type": "STRING",
+          "value": "extractvalue"
+        },
+        {
+          "type": "STRING",
+          "value": "fadd"
+        },
+        {
+          "type": "STRING",
+          "value": "fast"
+        },
+        {
+          "type": "STRING",
+          "value": "fcmp"
+        },
+        {
+          "type": "STRING",
+          "value": "fdiv"
+        },
+        {
+          "type": "STRING",
+          "value": "fence"
+        },
+        {
+          "type": "STRING",
+          "value": "fmul"
+        },
+        {
+          "type": "STRING",
+          "value": "fneg"
+        },
+        {
+          "type": "STRING",
+          "value": "fpext"
+        },
+        {
+          "type": "STRING",
+          "value": "fptosi"
+        },
+        {
+          "type": "STRING",
+          "value": "fptoui"
+        },
+        {
+          "type": "STRING",
+          "value": "fptrunc"
+        },
+        {
+          "type": "STRING",
+          "value": "free"
+        },
+        {
+          "type": "STRING",
+          "value": "freeze"
+        },
+        {
+          "type": "STRING",
+          "value": "frem"
+        },
+        {
+          "type": "STRING",
+          "value": "fsub"
+        },
+        {
+          "type": "STRING",
+          "value": "getelementptr"
+        },
+        {
+          "type": "STRING",
+          "value": "icmp"
+        },
+        {
+          "type": "STRING",
+          "value": "inbounds"
+        },
+        {
+          "type": "STRING",
+          "value": "indirectbr"
+        },
+        {
+          "type": "STRING",
+          "value": "insertelement"
+        },
+        {
+          "type": "STRING",
+          "value": "insertvalue"
+        },
+        {
+          "type": "STRING",
+          "value": "inttoptr"
+        },
+        {
+          "type": "STRING",
+          "value": "invoke"
+        },
+        {
+          "type": "STRING",
+          "value": "landingpad"
+        },
+        {
+          "type": "STRING",
+          "value": "load"
+        },
+        {
+          "type": "STRING",
+          "value": "lshr"
+        },
+        {
+          "type": "STRING",
+          "value": "malloc"
+        },
+        {
+          "type": "STRING",
+          "value": "max"
+        },
+        {
+          "type": "STRING",
+          "value": "min"
+        },
+        {
+          "type": "STRING",
+          "value": "mul"
+        },
+        {
+          "type": "STRING",
+          "value": "nand"
+        },
+        {
+          "type": "STRING",
+          "value": "ne"
+        },
+        {
+          "type": "STRING",
+          "value": "ninf"
+        },
+        {
+          "type": "STRING",
+          "value": "nnan"
+        },
+        {
+          "type": "STRING",
+          "value": "nsw"
+        },
+        {
+          "type": "STRING",
+          "value": "nsz"
+        },
+        {
+          "type": "STRING",
+          "value": "nuw"
+        },
+        {
+          "type": "STRING",
+          "value": "oeq"
+        },
+        {
+          "type": "STRING",
+          "value": "oge"
+        },
+        {
+          "type": "STRING",
+          "value": "ogt"
+        },
+        {
+          "type": "STRING",
+          "value": "ole"
+        },
+        {
+          "type": "STRING",
+          "value": "olt"
+        },
+        {
+          "type": "STRING",
+          "value": "one"
+        },
+        {
+          "type": "STRING",
+          "value": "or"
+        },
+        {
+          "type": "STRING",
+          "value": "ord"
+        },
+        {
+          "type": "STRING",
+          "value": "phi"
+        },
+        {
+          "type": "STRING",
+          "value": "ptrtoint"
+        },
+        {
+          "type": "STRING",
+          "value": "resume"
+        },
+        {
+          "type": "STRING",
+          "value": "ret"
+        },
+        {
+          "type": "STRING",
+          "value": "sdiv"
+        },
+        {
+          "type": "STRING",
+          "value": "select"
+        },
+        {
+          "type": "STRING",
+          "value": "sext"
+        },
+        {
+          "type": "STRING",
+          "value": "sge"
+        },
+        {
+          "type": "STRING",
+          "value": "sgt"
+        },
+        {
+          "type": "STRING",
+          "value": "shl"
+        },
+        {
+          "type": "STRING",
+          "value": "shufflevector"
+        },
+        {
+          "type": "STRING",
+          "value": "sitofp"
+        },
+        {
+          "type": "STRING",
+          "value": "sle"
+        },
+        {
+          "type": "STRING",
+          "value": "slt"
+        },
+        {
+          "type": "STRING",
+          "value": "srem"
+        },
+        {
+          "type": "STRING",
+          "value": "store"
+        },
+        {
+          "type": "STRING",
+          "value": "sub"
+        },
+        {
+          "type": "STRING",
+          "value": "switch"
+        },
+        {
+          "type": "STRING",
+          "value": "trunc"
+        },
+        {
+          "type": "STRING",
+          "value": "udiv"
+        },
+        {
+          "type": "STRING",
+          "value": "ueq"
+        },
+        {
+          "type": "STRING",
+          "value": "uge"
+        },
+        {
+          "type": "STRING",
+          "value": "ugt"
+        },
+        {
+          "type": "STRING",
+          "value": "uitofp"
+        },
+        {
+          "type": "STRING",
+          "value": "ule"
+        },
+        {
+          "type": "STRING",
+          "value": "ult"
+        },
+        {
+          "type": "STRING",
+          "value": "umax"
+        },
+        {
+          "type": "STRING",
+          "value": "umin"
+        },
+        {
+          "type": "STRING",
+          "value": "une"
+        },
+        {
+          "type": "STRING",
+          "value": "uno"
+        },
+        {
+          "type": "STRING",
+          "value": "unreachable"
+        },
+        {
+          "type": "STRING",
+          "value": "unwind"
+        },
+        {
+          "type": "STRING",
+          "value": "urem"
+        },
+        {
+          "type": "STRING",
+          "value": "va_arg"
+        },
+        {
+          "type": "STRING",
+          "value": "xchg"
+        },
+        {
+          "type": "STRING",
+          "value": "xor"
+        },
+        {
+          "type": "STRING",
+          "value": "zext"
+        }
+      ]
+    },
+    "keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "acq_rel"
+        },
+        {
+          "type": "STRING",
+          "value": "acquire"
+        },
+        {
+          "type": "STRING",
+          "value": "addrspace"
+        },
+        {
+          "type": "STRING",
+          "value": "alias"
+        },
+        {
+          "type": "STRING",
+          "value": "align"
+        },
+        {
+          "type": "STRING",
+          "value": "alignstack"
+        },
+        {
+          "type": "STRING",
+          "value": "allocsize"
+        },
+        {
+          "type": "STRING",
+          "value": "alwaysinline"
+        },
+        {
+          "type": "STRING",
+          "value": "appending"
+        },
+        {
+          "type": "STRING",
+          "value": "argmemonly"
+        },
+        {
+          "type": "STRING",
+          "value": "arm_aapcs_vfpcc"
+        },
+        {
+          "type": "STRING",
+          "value": "arm_aapcscc"
+        },
+        {
+          "type": "STRING",
+          "value": "arm_apcscc"
+        },
+        {
+          "type": "STRING",
+          "value": "asm"
+        },
+        {
+          "type": "STRING",
+          "value": "atomic"
+        },
+        {
+          "type": "STRING",
+          "value": "available_externally"
+        },
+        {
+          "type": "STRING",
+          "value": "blockaddress"
+        },
+        {
+          "type": "STRING",
+          "value": "builtin"
+        },
+        {
+          "type": "STRING",
+          "value": "byref"
+        },
+        {
+          "type": "STRING",
+          "value": "byval"
+        },
+        {
+          "type": "STRING",
+          "value": "c"
+        },
+        {
+          "type": "STRING",
+          "value": "caller"
+        },
+        {
+          "type": "STRING",
+          "value": "catch"
+        },
+        {
+          "type": "STRING",
+          "value": "cc"
+        },
+        {
+          "type": "STRING",
+          "value": "ccc"
+        },
+        {
+          "type": "STRING",
+          "value": "cleanup"
+        },
+        {
+          "type": "STRING",
+          "value": "cold"
+        },
+        {
+          "type": "STRING",
+          "value": "coldcc"
+        },
+        {
+          "type": "STRING",
+          "value": "comdat"
+        },
+        {
+          "type": "STRING",
+          "value": "common"
+        },
+        {
+          "type": "STRING",
+          "value": "constant"
+        },
+        {
+          "type": "STRING",
+          "value": "convergent"
+        },
+        {
+          "type": "STRING",
+          "value": "datalayout"
+        },
+        {
+          "type": "STRING",
+          "value": "declare"
+        },
+        {
+          "type": "STRING",
+          "value": "default"
+        },
+        {
+          "type": "STRING",
+          "value": "define"
+        },
+        {
+          "type": "STRING",
+          "value": "deplibs"
+        },
+        {
+          "type": "STRING",
+          "value": "dereferenceable"
+        },
+        {
+          "type": "STRING",
+          "value": "dereferenceable_or_null"
+        },
+        {
+          "type": "STRING",
+          "value": "distinct"
+        },
+        {
+          "type": "STRING",
+          "value": "dllexport"
+        },
+        {
+          "type": "STRING",
+          "value": "dllimport"
+        },
+        {
+          "type": "STRING",
+          "value": "dso_local"
+        },
+        {
+          "type": "STRING",
+          "value": "dso_preemptable"
+        },
+        {
+          "type": "STRING",
+          "value": "except"
+        },
+        {
+          "type": "STRING",
+          "value": "extern_weak"
+        },
+        {
+          "type": "STRING",
+          "value": "external"
+        },
+        {
+          "type": "STRING",
+          "value": "externally_initialized"
+        },
+        {
+          "type": "STRING",
+          "value": "fastcc"
+        },
+        {
+          "type": "STRING",
+          "value": "filter"
+        },
+        {
+          "type": "STRING",
+          "value": "from"
+        },
+        {
+          "type": "STRING",
+          "value": "gc"
+        },
+        {
+          "type": "STRING",
+          "value": "global"
+        },
+        {
+          "type": "STRING",
+          "value": "hhvm_ccc"
+        },
+        {
+          "type": "STRING",
+          "value": "hhvmcc"
+        },
+        {
+          "type": "STRING",
+          "value": "hidden"
+        },
+        {
+          "type": "STRING",
+          "value": "hot"
+        },
+        {
+          "type": "STRING",
+          "value": "immarg"
+        },
+        {
+          "type": "STRING",
+          "value": "inaccessiblemem_or_argmemonly"
+        },
+        {
+          "type": "STRING",
+          "value": "inaccessiblememonly"
+        },
+        {
+          "type": "STRING",
+          "value": "inalloca"
+        },
+        {
+          "type": "STRING",
+          "value": "initialexec"
+        },
+        {
+          "type": "STRING",
+          "value": "inlinehint"
+        },
+        {
+          "type": "STRING",
+          "value": "inreg"
+        },
+        {
+          "type": "STRING",
+          "value": "intel_ocl_bicc"
+        },
+        {
+          "type": "STRING",
+          "value": "inteldialect"
+        },
+        {
+          "type": "STRING",
+          "value": "internal"
+        },
+        {
+          "type": "STRING",
+          "value": "jumptable"
+        },
+        {
+          "type": "STRING",
+          "value": "linkonce"
+        },
+        {
+          "type": "STRING",
+          "value": "linkonce_odr"
+        },
+        {
+          "type": "STRING",
+          "value": "local_unnamed_addr"
+        },
+        {
+          "type": "STRING",
+          "value": "localdynamic"
+        },
+        {
+          "type": "STRING",
+          "value": "localexec"
+        },
+        {
+          "type": "STRING",
+          "value": "minsize"
+        },
+        {
+          "type": "STRING",
+          "value": "module"
+        },
+        {
+          "type": "STRING",
+          "value": "monotonic"
+        },
+        {
+          "type": "STRING",
+          "value": "msp430_intrcc"
+        },
+        {
+          "type": "STRING",
+          "value": "mustprogress"
+        },
+        {
+          "type": "STRING",
+          "value": "musttail"
+        },
+        {
+          "type": "STRING",
+          "value": "naked"
+        },
+        {
+          "type": "STRING",
+          "value": "nest"
+        },
+        {
+          "type": "STRING",
+          "value": "noalias"
+        },
+        {
+          "type": "STRING",
+          "value": "nobuiltin"
+        },
+        {
+          "type": "STRING",
+          "value": "nocallback"
+        },
+        {
+          "type": "STRING",
+          "value": "nocapture"
+        },
+        {
+          "type": "STRING",
+          "value": "nocf_check"
+        },
+        {
+          "type": "STRING",
+          "value": "noduplicate"
+        },
+        {
+          "type": "STRING",
+          "value": "nofree"
+        },
+        {
+          "type": "STRING",
+          "value": "noimplicitfloat"
+        },
+        {
+          "type": "STRING",
+          "value": "noinline"
+        },
+        {
+          "type": "STRING",
+          "value": "nomerge"
+        },
+        {
+          "type": "STRING",
+          "value": "nonlazybind"
+        },
+        {
+          "type": "STRING",
+          "value": "nonnull"
+        },
+        {
+          "type": "STRING",
+          "value": "noprofile"
+        },
+        {
+          "type": "STRING",
+          "value": "norecurse"
+        },
+        {
+          "type": "STRING",
+          "value": "noredzone"
+        },
+        {
+          "type": "STRING",
+          "value": "noreturn"
+        },
+        {
+          "type": "STRING",
+          "value": "nosync"
+        },
+        {
+          "type": "STRING",
+          "value": "noundef"
+        },
+        {
+          "type": "STRING",
+          "value": "nounwind"
+        },
+        {
+          "type": "STRING",
+          "value": "nosanitize_coverage"
+        },
+        {
+          "type": "STRING",
+          "value": "null_pointer_is_valid"
+        },
+        {
+          "type": "STRING",
+          "value": "optforfuzzing"
+        },
+        {
+          "type": "STRING",
+          "value": "optnone"
+        },
+        {
+          "type": "STRING",
+          "value": "optsize"
+        },
+        {
+          "type": "STRING",
+          "value": "personality"
+        },
+        {
+          "type": "STRING",
+          "value": "preallocated"
+        },
+        {
+          "type": "STRING",
+          "value": "private"
+        },
+        {
+          "type": "STRING",
+          "value": "protected"
+        },
+        {
+          "type": "STRING",
+          "value": "ptx_device"
+        },
+        {
+          "type": "STRING",
+          "value": "ptx_kernel"
+        },
+        {
+          "type": "STRING",
+          "value": "readnone"
+        },
+        {
+          "type": "STRING",
+          "value": "readonly"
+        },
+        {
+          "type": "STRING",
+          "value": "release"
+        },
+        {
+          "type": "STRING",
+          "value": "returned"
+        },
+        {
+          "type": "STRING",
+          "value": "returns_twice"
+        },
+        {
+          "type": "STRING",
+          "value": "safestack"
+        },
+        {
+          "type": "STRING",
+          "value": "sanitize_address"
+        },
+        {
+          "type": "STRING",
+          "value": "sanitize_hwaddress"
+        },
+        {
+          "type": "STRING",
+          "value": "sanitize_memory"
+        },
+        {
+          "type": "STRING",
+          "value": "sanitize_memtag"
+        },
+        {
+          "type": "STRING",
+          "value": "sanitize_thread"
+        },
+        {
+          "type": "STRING",
+          "value": "section"
+        },
+        {
+          "type": "STRING",
+          "value": "seq_cst"
+        },
+        {
+          "type": "STRING",
+          "value": "shadowcallstack"
+        },
+        {
+          "type": "STRING",
+          "value": "sideeffect"
+        },
+        {
+          "type": "STRING",
+          "value": "signext"
+        },
+        {
+          "type": "STRING",
+          "value": "source_filename"
+        },
+        {
+          "type": "STRING",
+          "value": "speculatable"
+        },
+        {
+          "type": "STRING",
+          "value": "speculative_load_hardening"
+        },
+        {
+          "type": "STRING",
+          "value": "spir_func"
+        },
+        {
+          "type": "STRING",
+          "value": "spir_kernel"
+        },
+        {
+          "type": "STRING",
+          "value": "sret"
+        },
+        {
+          "type": "STRING",
+          "value": "ssp"
+        },
+        {
+          "type": "STRING",
+          "value": "sspreq"
+        },
+        {
+          "type": "STRING",
+          "value": "sspstrong"
+        },
+        {
+          "type": "STRING",
+          "value": "strictfp"
+        },
+        {
+          "type": "STRING",
+          "value": "swiftcc"
+        },
+        {
+          "type": "STRING",
+          "value": "swifterror"
+        },
+        {
+          "type": "STRING",
+          "value": "swifttailcc"
+        },
+        {
+          "type": "STRING",
+          "value": "swiftself"
+        },
+        {
+          "type": "STRING",
+          "value": "syncscope"
+        },
+        {
+          "type": "STRING",
+          "value": "tail"
+        },
+        {
+          "type": "STRING",
+          "value": "tailcc"
+        },
+        {
+          "type": "STRING",
+          "value": "target"
+        },
+        {
+          "type": "STRING",
+          "value": "thread_local"
+        },
+        {
+          "type": "STRING",
+          "value": "to"
+        },
+        {
+          "type": "STRING",
+          "value": "triple"
+        },
+        {
+          "type": "STRING",
+          "value": "unnamed_addr"
+        },
+        {
+          "type": "STRING",
+          "value": "unordered"
+        },
+        {
+          "type": "STRING",
+          "value": "uselistorder"
+        },
+        {
+          "type": "STRING",
+          "value": "uselistorder_bb"
+        },
+        {
+          "type": "STRING",
+          "value": "uwtable"
+        },
+        {
+          "type": "STRING",
+          "value": "volatile"
+        },
+        {
+          "type": "STRING",
+          "value": "weak"
+        },
+        {
+          "type": "STRING",
+          "value": "weak_odr"
+        },
+        {
+          "type": "STRING",
+          "value": "willreturn"
+        },
+        {
+          "type": "STRING",
+          "value": "win64cc"
+        },
+        {
+          "type": "STRING",
+          "value": "within"
+        },
+        {
+          "type": "STRING",
+          "value": "writeonly"
         },
         {
           "type": "STRING",
           "value": "x"
         },
         {
-          "type": "SYMBOL",
-          "name": "type"
+          "type": "STRING",
+          "value": "x86_64_sysvcc"
         },
         {
           "type": "STRING",
-          "value": "]"
+          "value": "x86_fastcallcc"
+        },
+        {
+          "type": "STRING",
+          "value": "x86_stdcallcc"
+        },
+        {
+          "type": "STRING",
+          "value": "x86_thiscallcc"
+        },
+        {
+          "type": "STRING",
+          "value": "zeroext"
         }
       ]
     },
-    "structure_type": {
-      "type": "STRING",
-      "value": "TODO structure_type"
+    "number": {
+      "type": "PATTERN",
+      "value": "-?\\d+"
     },
-    "initializer_constant": {
+    "float": {
       "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": "TODO initializer_constant"
+          "type": "PATTERN",
+          "value": "-?\\d+\\.\\d*(e[+-]\\d+)\\?"
         },
         {
-          "type": "SYMBOL",
-          "name": "boolean"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "integer"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "character_array"
+          "type": "PATTERN",
+          "value": "0x[0-9a-fA-F]+"
         }
       ]
-    },
-    "named_metadata": {
-      "type": "STRING",
-      "value": "n.*"
-    },
-    "identifier": {
-      "type": "PATTERN",
-      "value": "[%@][-a-zA-Z$._][-a-zA-Z$._0-9]*"
     },
     "boolean": {
       "type": "CHOICE",
@@ -509,24 +1230,126 @@
         }
       ]
     },
-    "integer": {
-      "type": "PATTERN",
-      "value": "-?\\d+"
-    },
-    "string": {
-      "type": "PATTERN",
-      "value": "\"(\\\\\\\\|\\\\\"|.)*\""
-    },
-    "character_array": {
-      "type": "SEQ",
+    "constant": {
+      "type": "CHOICE",
       "members": [
         {
           "type": "STRING",
-          "value": "c"
+          "value": "zeroinitializer"
         },
         {
-          "type": "SYMBOL",
-          "name": "string"
+          "type": "STRING",
+          "value": "undef"
+        },
+        {
+          "type": "STRING",
+          "value": "null"
+        },
+        {
+          "type": "STRING",
+          "value": "none"
+        },
+        {
+          "type": "STRING",
+          "value": "poison"
+        },
+        {
+          "type": "STRING",
+          "value": "vscale"
+        }
+      ]
+    },
+    "comment": {
+      "type": "PATTERN",
+      "value": ";.*"
+    },
+    "string": {
+      "type": "PATTERN",
+      "value": "[!c]?\"(\\\\\\\\|\\\\\"|.)*\""
+    },
+    "label": {
+      "type": "PATTERN",
+      "value": "[-a-zA-Z$._][-a-zA-Z$._0-9]*:"
+    },
+    "identifier": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[%@!]\\d+"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[%@!][-a-zA-Z$._][-a-zA-Z$._0-9]*"
+        },
+        {
+          "type": "PATTERN",
+          "value": "DW_TAG_[a-z_]+"
+        },
+        {
+          "type": "PATTERN",
+          "value": "DW_ATE_[a-zA-Z_]+"
+        },
+        {
+          "type": "PATTERN",
+          "value": "DW_OP_[a-zA-Z0-9_]+"
+        },
+        {
+          "type": "PATTERN",
+          "value": "DW_LANG_[a-zA-Z0-9_]+"
+        },
+        {
+          "type": "PATTERN",
+          "value": "DW_VIRTUALITY_[a-z_]+"
+        },
+        {
+          "type": "PATTERN",
+          "value": "DIFlag[A-Za-z]+"
+        }
+      ]
+    },
+    "punctuation": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        },
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "STRING",
+          "value": "!"
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "STRING",
+          "value": "*"
         }
       ]
     }
