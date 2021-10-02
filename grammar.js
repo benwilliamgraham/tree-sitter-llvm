@@ -1,5 +1,5 @@
 module.exports = grammar({
-  name: "LLVM",
+  name: "llvm",
 
   rules: {
     module: ($) =>

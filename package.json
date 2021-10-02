@@ -22,5 +22,19 @@
   "devDependencies": {
     "prettier": "2.4.1",
     "tree-sitter-cli": "^0.20.0"
-  }
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.llvm",
+      "file-types": [
+        "llvm"
+      ]
+    }
+  ],
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "parser"
+  ]
 }
