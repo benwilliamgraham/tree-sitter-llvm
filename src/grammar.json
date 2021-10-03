@@ -52,7 +52,11 @@
           },
           {
             "type": "SYMBOL",
-            "name": "punctuation"
+            "name": "symbol"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "bracket"
           }
         ]
       }
@@ -1308,7 +1312,56 @@
         }
       ]
     },
-    "punctuation": {
+    "symbol": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "STRING",
+          "value": "!"
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "STRING",
+          "value": "*"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "STRING",
+          "value": "~"
+        },
+        {
+          "type": "STRING",
+          "value": "^"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "STRING",
+          "value": "-"
+        },
+        {
+          "type": "STRING",
+          "value": "+"
+        },
+        {
+          "type": "STRING",
+          "value": "|"
+        }
+      ]
+    },
+    "bracket": {
       "type": "CHOICE",
       "members": [
         {
@@ -1317,7 +1370,7 @@
         },
         {
           "type": "STRING",
-          "value": ")"
+          "value": "("
         },
         {
           "type": "STRING",
@@ -1334,22 +1387,6 @@
         {
           "type": "STRING",
           "value": "}"
-        },
-        {
-          "type": "STRING",
-          "value": ","
-        },
-        {
-          "type": "STRING",
-          "value": "!"
-        },
-        {
-          "type": "STRING",
-          "value": "="
-        },
-        {
-          "type": "STRING",
-          "value": "*"
         }
       ]
     }
@@ -1366,3 +1403,4 @@
   "inline": [],
   "supertypes": []
 }
+

@@ -16,7 +16,8 @@ module.exports = grammar({
           $.float,
           $.constant,
           $.identifier,
-          $.punctuation
+          $.symbol,
+          $.bracket
         )
       ),
 
@@ -341,25 +342,9 @@ module.exports = grammar({
         /DIFlag[A-Za-z]+/
       ),
 
-    punctuation: ($) =>
-      choice(
-        "(",
-        ")",
-        "[",
-        "]",
-        "{",
-        "}",
-        ",",
-        "!",
-        "=",
-        "*",
-        ":",
-        "~",
-        "^",
-        ":",
-        "-",
-        "+",
-        "|"
-      ),
+    symbol: ($) =>
+      choice(",", "!", "=", "*", ":", "~", "^", ":", "-", "+", "|"),
+
+    bracket: ($) => choice("(", "(", "[", "]", "{", "}"),
   },
 });

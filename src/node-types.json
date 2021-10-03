@@ -5,6 +5,11 @@
     "fields": {}
   },
   {
+    "type": "bracket",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "constant",
     "named": true,
     "fields": {}
@@ -37,6 +42,10 @@
           "named": true
         },
         {
+          "type": "bracket",
+          "named": true
+        },
+        {
           "type": "comment",
           "named": true
         },
@@ -65,15 +74,15 @@
           "named": true
         },
         {
-          "type": "punctuation",
-          "named": true
-        },
-        {
           "type": "statement",
           "named": true
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
           "named": true
         },
         {
@@ -84,12 +93,12 @@
     }
   },
   {
-    "type": "punctuation",
+    "type": "statement",
     "named": true,
     "fields": {}
   },
   {
-    "type": "statement",
+    "type": "symbol",
     "named": true,
     "fields": {}
   },
@@ -107,15 +116,23 @@
     "named": false
   },
   {
-    "type": ")",
-    "named": false
-  },
-  {
     "type": "*",
     "named": false
   },
   {
+    "type": "+",
+    "named": false
+  },
+  {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": ":",
     "named": false
   },
   {
@@ -128,6 +145,10 @@
   },
   {
     "type": "]",
+    "named": false
+  },
+  {
+    "type": "^",
     "named": false
   },
   {
@@ -1307,7 +1328,15 @@
     "named": false
   },
   {
+    "type": "|",
+    "named": false
+  },
+  {
     "type": "}",
+    "named": false
+  },
+  {
+    "type": "~",
     "named": false
   }
 ]
