@@ -1180,10 +1180,6 @@
         },
         {
           "type": "STRING",
-          "value": "x"
-        },
-        {
-          "type": "STRING",
           "value": "x86_64_sysvcc"
         },
         {
@@ -1358,6 +1354,14 @@
         {
           "type": "STRING",
           "value": "|"
+        },
+        {
+          "type": "STRING",
+          "value": "..."
+        },
+        {
+          "type": "STRING",
+          "value": "x"
         }
       ]
     },
@@ -1403,4 +1407,3 @@
   "inline": [],
   "supertypes": []
 }
-

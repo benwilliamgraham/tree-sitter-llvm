@@ -307,7 +307,6 @@ module.exports = grammar({
         "win64cc",
         "within",
         "writeonly",
-        "x",
         "x86_64_sysvcc",
         "x86_fastcallcc",
         "x86_stdcallcc",
@@ -343,7 +342,7 @@ module.exports = grammar({
       ),
 
     symbol: ($) =>
-      choice(",", "!", "=", "*", ":", "~", "^", ":", "-", "+", "|"),
+      choice(",", "!", "=", "*", ":", "~", "^", ":", "-", "+", "|", "...", "x"),
 
     bracket: ($) => choice("(", "(", "[", "]", "{", "}"),
   },
