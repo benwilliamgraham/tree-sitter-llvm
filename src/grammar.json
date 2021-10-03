@@ -1374,7 +1374,7 @@
         },
         {
           "type": "STRING",
-          "value": "("
+          "value": ")"
         },
         {
           "type": "STRING",
@@ -1407,3 +1407,4 @@
   "inline": [],
   "supertypes": []
 }
+

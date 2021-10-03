@@ -1,5 +1,5 @@
 (type) @type
-(statement) @statement
+(statement) @keyword.operator
 (number) @number
 (comment) @comment
 (string) @string
