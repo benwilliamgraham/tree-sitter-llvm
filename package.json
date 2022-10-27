@@ -27,7 +27,8 @@
     {
       "scope": "source.llvm",
       "file-types": [
-        "llvm"
+        "llvm",
+        "ll"
       ]
     }
   ],
