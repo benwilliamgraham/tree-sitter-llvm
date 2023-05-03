@@ -6,7 +6,7 @@
 //! ```
 //! let code = "";
 //! let mut parser = tree_sitter::Parser::new();
-//! parser.set_language(tree_sitter_LLVM::language()).expect("Error loading LLVM grammar");
+//! parser.set_language(tree_sitter_llvm::language()).expect("Error loading LLVM grammar");
 //! let tree = parser.parse(code, None).unwrap();
 //! ```
 //!
@@ -18,14 +18,14 @@
 use tree_sitter::Language;
 
 extern "C" {
-    fn tree_sitter_LLVM() -> Language;
+    fn tree_sitter_llvm() -> Language;
 }
 
 /// Get the tree-sitter [Language][] for this grammar.
 ///
 /// [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.html
 pub fn language() -> Language {
-    unsafe { tree_sitter_LLVM() }
+    unsafe { tree_sitter_llvm() }
 }
 
 /// The content of the [`node-types.json`][] file for this grammar.
@@ -35,7 +35,7 @@ pub const NODE_TYPES: &'static str = include_str!("../../src/node-types.json");
 
 // Uncomment these to include any queries that this grammar contains
 
-// pub const HIGHLIGHTS_QUERY: &'static str = include_str!("../../queries/highlights.scm");
+pub const HIGHLIGHTS_QUERY: &'static str = include_str!("../../queries/highlights.scm");
 // pub const INJECTIONS_QUERY: &'static str = include_str!("../../queries/injections.scm");
 // pub const LOCALS_QUERY: &'static str = include_str!("../../queries/locals.scm");
 // pub const TAGS_QUERY: &'static str = include_str!("../../queries/tags.scm");

@@ -1,5 +1,5 @@
 [package]
-name = "tree-sitter-LLVM"
+name = "tree-sitter-llvm"
 description = "LLVM grammar for the tree-sitter parsing library"
 version = "0.0.1"
 keywords = ["incremental", "parsing", "LLVM"]
