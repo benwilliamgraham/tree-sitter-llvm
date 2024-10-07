@@ -2712,3 +2712,196 @@ define void @main() {
           (metadata
             (specialized_md
               (metadata_ref))))))))
+
+================================================================================
+nneg
+================================================================================
+define void @main() {
+  %wide.trip.count = zext nneg i32 %n to i64
+}
+--------------------------------------------------------------------------------
+
+(module
+  (define
+    (function_header
+      (type
+        (type_keyword))
+      (global_var)
+      (argument_list))
+    (function_body
+      (instruction
+        (local_var)
+        (instruction_cast
+          (cast_inst)
+          (type_and_value
+            (type
+              (type_keyword))
+            (value
+              (var
+                (local_var))))
+          (type
+            (type_keyword)))))))
+
+================================================================================
+inrange
+================================================================================
+define void @main() {
+  store ptr getelementptr inbounds inrange(-16, 8) ({ [3 x ptr] }, ptr @_ZTV1S, i64 0, i32 0, i64 2), ptr %this, align 8
+}
+--------------------------------------------------------------------------------
+
+(module
+  (define
+    (function_header
+      (type
+        (type_keyword))
+      (global_var)
+      (argument_list))
+    (function_body
+      (instruction
+        (instruction_store
+          (type_and_value
+            (type
+              (type_keyword))
+            (value
+              (constant_expr
+                (constant_getelementptr
+                  (number)
+                  (number)
+                  (type_and_value
+                    (type
+                      (struct_type
+                        (struct_body
+                          (type
+                            (array_type
+                              (array_vector_body
+                                (number)
+                                (type
+                                  (type_keyword)))))))))
+                  (type_and_value
+                    (type
+                      (type_keyword))
+                    (value
+                      (var
+                        (global_var))))
+                  (type_and_value
+                    (type
+                      (type_keyword))
+                    (value
+                      (number)))
+                  (type_and_value
+                    (type
+                      (type_keyword))
+                    (value
+                      (number)))
+                  (type_and_value
+                    (type
+                      (type_keyword))
+                    (value
+                      (number)))))))
+          (type_and_value
+            (type
+              (type_keyword))
+            (value
+              (var
+                (local_var))))
+          (number))))))
+
+================================================================================
+disjoint
+================================================================================
+define void @main() {
+  %add13710 = or disjoint i32 %j.19, 1
+}
+--------------------------------------------------------------------------------
+
+(module
+  (define
+    (function_header
+      (type
+        (type_keyword))
+      (global_var)
+      (argument_list))
+    (function_body
+      (instruction
+        (local_var)
+        (instruction_bin_op
+          (bin_op_keyword
+            (atomic_bin_op_keyword))
+          (type_and_value
+            (type
+              (type_keyword))
+            (value
+              (var
+                (local_var))))
+          (value
+            (number)))))))
+
+================================================================================
+memory attributes
+================================================================================
+attributes #0 = { mustprogress nofree noinline norecurse nounwind ssp memory(readwrite, argmem: none) uwtable(sync) "frame-pointer"="non-leaf" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="apple-m1" "target-features"="+aes,+altnzcv,+ccdp,+complxnum,+crc,+dotprod,+fp-armv8,+fp16fml,+fptoint,+fullfp16,+jsconv,+lse,+neon,+pauth,+perfmon,+predres,+ras,+rcpc,+rdm,+sb,+sha2,+sha3,+specrestrict,+ssbs,+v8.1a,+v8.2a,+v8.3a,+v8.4a,+v8a,+zcm,+zcz" }
+--------------------------------------------------------------------------------
+
+(module
+  (unnamed_attr_grp
+    (attr_ref)
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name
+        (memory_attribute
+          (memory_attribute_val)
+          (memory_attribute_val))))
+    (attribute
+      (attribute_name
+        (uwtable)))
+    (attribute
+      (string)
+      (string))
+    (attribute
+      (string)
+      (string))
+    (attribute
+      (string)
+      (string))
+    (attribute
+      (string)
+      (string))
+    (attribute
+      (string)
+      (string))))
+
+================================================================================
+nocallback
+================================================================================
+attributes #1 = { nocallback nofree nosync nounwind readnone speculatable willreturn }
+--------------------------------------------------------------------------------
+
+(module
+  (unnamed_attr_grp
+    (attr_ref)
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name))
+    (attribute
+      (attribute_name))))
