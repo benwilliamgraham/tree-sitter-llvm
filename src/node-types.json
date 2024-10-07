@@ -238,7 +238,21 @@
   {
     "type": "attribute_name",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "memory_attribute",
+          "named": true
+        },
+        {
+          "type": "uwtable",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "bin_op_keyword",
@@ -571,6 +585,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "number",
+          "named": true
+        },
         {
           "type": "type_and_value",
           "named": true
@@ -2476,6 +2494,26 @@
     "fields": {}
   },
   {
+    "type": "memory_attribute",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "memory_attribute_val",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "memory_attribute_val",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "metadata",
     "named": true,
     "fields": {},
@@ -3112,6 +3150,11 @@
     }
   },
   {
+    "type": "uwtable",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "value",
     "named": true,
     "fields": {},
@@ -3345,6 +3388,10 @@
     "named": false
   },
   {
+    "type": "argmem",
+    "named": false
+  },
+  {
     "type": "argmemonly",
     "named": false
   },
@@ -3354,6 +3401,10 @@
   },
   {
     "type": "asm",
+    "named": false
+  },
+  {
+    "type": "async",
     "named": false
   },
   {
@@ -3533,6 +3584,10 @@
     "named": false
   },
   {
+    "type": "disjoint",
+    "named": false
+  },
+  {
     "type": "distinct",
     "named": false
   },
@@ -3630,11 +3685,11 @@
   },
   {
     "type": "float",
-    "named": true
+    "named": false
   },
   {
     "type": "float",
-    "named": false
+    "named": true
   },
   {
     "type": "fmul",
@@ -3722,6 +3777,10 @@
   },
   {
     "type": "immarg",
+    "named": false
+  },
+  {
+    "type": "inaccessiblemem",
     "named": false
   },
   {
@@ -3845,6 +3904,10 @@
     "named": false
   },
   {
+    "type": "memory",
+    "named": false
+  },
+  {
     "type": "metadata",
     "named": false
   },
@@ -3901,6 +3964,10 @@
     "named": false
   },
   {
+    "type": "nneg",
+    "named": false
+  },
+  {
     "type": "no-jump-tables",
     "named": false
   },
@@ -3914,6 +3981,10 @@
   },
   {
     "type": "nobuiltin",
+    "named": false
+  },
+  {
+    "type": "nocallback",
     "named": false
   },
   {
@@ -4121,11 +4192,19 @@
     "named": false
   },
   {
+    "type": "read",
+    "named": false
+  },
+  {
     "type": "readnone",
     "named": false
   },
   {
     "type": "readonly",
+    "named": false
+  },
+  {
+    "type": "readwrite",
     "named": false
   },
   {
@@ -4317,6 +4396,10 @@
     "named": false
   },
   {
+    "type": "sync",
+    "named": false
+  },
+  {
     "type": "syncscope",
     "named": false
   },
@@ -4478,6 +4561,10 @@
   },
   {
     "type": "within",
+    "named": false
+  },
+  {
+    "type": "write",
     "named": false
   },
   {

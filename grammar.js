@@ -5,6 +5,7 @@ module.exports = grammar({
     [$.type_and_value],
     [$.instruction_alloca], [$.instruction_getelementptr], [$._load_store_suffix], [$.instruction_extractvalue],
     [$.instruction_insertvalue], [$.instruction_phi], [$.instruction_cmpxchg], [$.instruction_atomicrmw], [$.instruction_br],
+    [$.uwtable],
   ],
 
   extras: $ => [
@@ -359,6 +360,7 @@ module.exports = grammar({
       'willreturn',
       'nosync',
       'nounwind',
+      'nocallback',
       'nosanitize_coverage',
       'null_pointer_is_valid',
       'optforfuzzing',
@@ -381,7 +383,6 @@ module.exports = grammar({
       'sspstrong',
       'sspreq',
       'strictfp',
-      'uwtable',
       'nocf_check',
       'shadowcallstack',
       'mustprogress',
@@ -408,6 +409,31 @@ module.exports = grammar({
       'swifterror',
       'immarg',
       'noundef',
+      $.uwtable,
+      $.memory_attribute,
+    ),
+
+    uwtable: _ => seq('uwtable', optional(seq(
+      '(',
+      choice('sync', 'async'),
+      ')',
+    ))),
+
+    memory_attribute: $ => seq(
+      'memory',
+      '(',
+      commaSep1(choice(
+        $.memory_attribute_val,
+        seq(choice('argmem', 'inaccessiblemem'), ':', $.memory_attribute_val)
+      )),
+      ')',
+    ),
+
+    memory_attribute_val: _ => choice(
+      'none',
+      'read',
+      'write',
+      'readwrite',
     ),
 
     function_body: $ => seq(
@@ -485,7 +511,7 @@ module.exports = grammar({
     instruction_fneg: $ => seq(field('inst_name', 'fneg'), repeat($.fast_math), $.type_and_value),
 
     instruction_bin_op: $ => seq(field('inst_name', $.bin_op_keyword),
-      repeat(choice('nsw', 'nuw', 'exact', $.fast_math)), $.type_and_value, ',', $.value),
+      repeat(choice('nsw', 'nuw', 'exact', 'disjoint', $.fast_math)), $.type_and_value, ',', $.value),
 
     instruction_switch: $ => seq(field('inst_name', 'switch'), $.type_and_value, ',', $.type_and_value,
       '[', repeat(seq($.type_and_value, ',', $.type_and_value)), ']'),
@@ -508,7 +534,7 @@ module.exports = grammar({
 
     instruction_fcmp: $ => seq(field('inst_name', 'fcmp'), repeat($.fast_math), $.fcmp_cond, $.type_and_value, ',', $.value),
 
-    instruction_cast: $ => seq(field('inst_name', $.cast_inst), $.type_and_value, 'to', $.type),
+    instruction_cast: $ => seq(field('inst_name', $.cast_inst), optional('nneg'), $.type_and_value, 'to', $.type),
 
     instruction_va_arg: $ => seq(field('inst_name', 'va_arg'), $.type_and_value, ',', $.type),
 
@@ -657,6 +683,7 @@ module.exports = grammar({
     constant_getelementptr: $ => seq(
       field('inst_name', 'getelementptr'),
       optional('inbounds'),
+      optional(seq('inrange', '(', $.number, ',', $.number, ')')),
       '(',
       commaSep1(seq(optional('inrange'), $.type_and_value)),
       ')',

@@ -1721,6 +1721,10 @@
         },
         {
           "type": "STRING",
+          "value": "nocallback"
+        },
+        {
+          "type": "STRING",
           "value": "nosanitize_coverage"
         },
         {
@@ -1806,10 +1810,6 @@
         {
           "type": "STRING",
           "value": "strictfp"
-        },
-        {
-          "type": "STRING",
-          "value": "uwtable"
         },
         {
           "type": "STRING",
@@ -1914,6 +1914,182 @@
         {
           "type": "STRING",
           "value": "noundef"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "uwtable"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "memory_attribute"
+        }
+      ]
+    },
+    "uwtable": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "uwtable"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "sync"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "async"
+                    }
+                  ]
+                },
+                {
+                  "type": "STRING",
+                  "value": ")"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "memory_attribute": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "memory"
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "memory_attribute_val"
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": "argmem"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "inaccessiblemem"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "STRING",
+                      "value": ":"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "memory_attribute_val"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": ","
+                  },
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "memory_attribute_val"
+                      },
+                      {
+                        "type": "SEQ",
+                        "members": [
+                          {
+                            "type": "CHOICE",
+                            "members": [
+                              {
+                                "type": "STRING",
+                                "value": "argmem"
+                              },
+                              {
+                                "type": "STRING",
+                                "value": "inaccessiblemem"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "STRING",
+                            "value": ":"
+                          },
+                          {
+                            "type": "SYMBOL",
+                            "name": "memory_attribute_val"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "memory_attribute_val": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "none"
+        },
+        {
+          "type": "STRING",
+          "value": "read"
+        },
+        {
+          "type": "STRING",
+          "value": "write"
+        },
+        {
+          "type": "STRING",
+          "value": "readwrite"
         }
       ]
     },
@@ -2453,6 +2629,10 @@
                 "value": "exact"
               },
               {
+                "type": "STRING",
+                "value": "disjoint"
+              },
+              {
                 "type": "SYMBOL",
                 "name": "fast_math"
               }
@@ -2826,6 +3006,18 @@
             "type": "SYMBOL",
             "name": "cast_inst"
           }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "nneg"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -4310,6 +4502,43 @@
             {
               "type": "STRING",
               "value": "inbounds"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "inrange"
+                },
+                {
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "number"
+                },
+                {
+                  "type": "STRING",
+                  "value": ","
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "number"
+                },
+                {
+                  "type": "STRING",
+                  "value": ")"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -6465,6 +6694,9 @@
     ],
     [
       "instruction_br"
+    ],
+    [
+      "uwtable"
     ]
   ],
   "precedences": [],
@@ -6472,4 +6704,3 @@
   "inline": [],
   "supertypes": []
 }
-

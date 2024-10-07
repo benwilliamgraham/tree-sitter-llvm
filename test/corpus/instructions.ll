@@ -2498,7 +2498,8 @@ entry:
       (attribute
         (attribute_name))
       (attribute
-        (attribute_name))
+        (attribute_name
+          (uwtable)))
       (attribute
         (attribute_name))
       (attribute
