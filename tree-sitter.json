@@ -1,0 +1,36 @@
+{
+  "grammars": [
+    {
+      "name": "llvm",
+      "camelcase": "Llvm",
+      "scope": "source.llvm",
+      "path": ".",
+      "file-types": [
+        "llvm",
+        "ll"
+      ],
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "license": "ISC",
+    "description": "Tree sitter parser for LLVM",
+    "authors": [
+      {
+        "name": "Benjamin Graham"
+      }
+    ],
+    "links": {
+      "repository": "git+https://github.com/benwilliamgraham/tree-sitter-llvm.git"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
