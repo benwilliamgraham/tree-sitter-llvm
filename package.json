@@ -36,21 +36,6 @@
     "tree-sitter-cli": "^0.20.0",
     "prebuildify": "^6.0.0"
   },
-  "tree-sitter": [
-    {
-      "scope": "source.llvm",
-      "file-types": [
-        "llvm",
-        "ll"
-      ]
-    }
-  ],
-  "directories": {
-    "example": "example"
-  },
-  "keywords": [
-    "parser"
-  ],
   "files": [
     "grammar.js",
     "binding.gyp",
@@ -58,5 +43,11 @@
     "bindings/node/*",
     "queries/*",
     "src/**"
+  ],
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "parser"
   ]
 }
