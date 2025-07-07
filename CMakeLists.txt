@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-llvm
-        VERSION "1.0.0"
+        VERSION "1.1.0"
         DESCRIPTION "Tree sitter parser for LLVM"
         HOMEPAGE_URL "git+https://github.com/benwilliamgraham/tree-sitter-llvm.git"
         LANGUAGES C)

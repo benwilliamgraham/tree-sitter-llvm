@@ -50,7 +50,7 @@ define void @test() nounwind {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -147,7 +147,7 @@ define void @bar() comdat($foo) {
         (number)))
     (attribute
       (comdat_ref)))
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -207,7 +207,7 @@ define void @f2() !dbg !22 {
         (metadata
           (specialized_md
             (metadata_ref))))))
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -263,7 +263,7 @@ define void @f2() !dbg !22 {
         (type_keyword))
       (global_var)
       (argument_list)))
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2251,7 +2251,7 @@ define void @f() #0 #1 { }
     (attribute
       (string)))
   (comment)
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2285,7 +2285,7 @@ uselistorder_bb @foo, %bb, { 5, 1, 3, 2, 0, 4 }
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))

@@ -80,7 +80,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -116,7 +116,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -219,7 +219,7 @@ define bfloat @check_bfloat_literal() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -265,7 +265,7 @@ define void @qux(<{i32, i32}>* %x) nounwind {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -333,7 +333,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -674,7 +674,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -723,7 +723,7 @@ define hidden void @test_normal(i8* noalias %dst, i8* %src) personality i8* bitc
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (linkage
         (visibility))
@@ -774,7 +774,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -816,7 +816,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -851,7 +851,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -874,7 +874,7 @@ define void @_Z3foov(%"class.std::auto_ptr"* noalias nocapture sret(%"class.std:
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -933,7 +933,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -993,7 +993,7 @@ define i32 @main(i32 %argc, i8** nocapture readnone %argv) local_unnamed_addr #0
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1047,7 +1047,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1086,7 +1086,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1139,7 +1139,7 @@ $N:
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1206,7 +1206,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1247,7 +1247,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1602,7 +1602,7 @@ define ptr @g(ptr addrspace(2) %a) {
           (number))
         (addrspace
           (number)))))
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1653,7 +1653,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1718,7 +1718,7 @@ define void @caller() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1773,7 +1773,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1814,7 +1814,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1847,7 +1847,7 @@ define void @foo(i1 %f0, i1 %f1, i1 %f2) !prof !{!"function_entry_count", i64 0}
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1895,7 +1895,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1963,7 +1963,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2161,7 +2161,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2305,7 +2305,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2641,7 +2641,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2722,7 +2722,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2751,7 +2751,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2816,7 +2816,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))

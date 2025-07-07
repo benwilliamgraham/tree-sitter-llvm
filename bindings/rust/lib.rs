@@ -6,7 +6,7 @@
 //! ```
 //! let code = "";
 //! let mut parser = tree_sitter::Parser::new();
-//! parser.set_language(tree_sitter_llvm::language()).expect("Error loading LLVM grammar");
+//! parser.set_language(&tree_sitter_llvm::language()).expect("Error loading LLVM grammar");
 //! let tree = parser.parse(code, None).unwrap();
 //! ```
 //!
@@ -17,7 +17,7 @@
 
 use tree_sitter::Language;
 
-extern "C" {
+unsafe extern "C" {
     fn tree_sitter_llvm() -> Language;
 }
 
@@ -46,7 +46,7 @@ mod tests {
     fn test_can_load_grammar() {
         let mut parser = tree_sitter::Parser::new();
         parser
-            .set_language(super::language())
+            .set_language(&super::language())
             .expect("Error loading LLVM language");
     }
 }

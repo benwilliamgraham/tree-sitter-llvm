@@ -11,7 +11,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -73,7 +73,7 @@ IfUnequal:
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -139,10 +139,10 @@ define void @main() {
   ; Emulate a conditional br instruction
   %Val = zext i1 %value to i32
   switch i32 %Val, label %truedest [ i32 0, label %falsedest ]
-  
+
   ; Emulate an unconditional br instruction
   switch i32 0, label %dest [ ]
-  
+
   ; Implement a jump table:
   switch i32 %val, label %otherwise [ i32 0, label %onzero
                                      i32 1, label %onone
@@ -152,7 +152,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -271,7 +271,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -319,7 +319,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -390,7 +390,7 @@ define void @main() {
   ; "asm goto" without output constraints.
   callbr void asm "", "r,X"(i32 %x, i8 *blockaddress(@foo, %indirect))
               to label %fallthrough [label %indirect]
-  
+
   ; "asm goto" with output constraints.
   %result = callbr i32 asm "", "=r,r,X"(i32 %x, i8 *blockaddress(@foo, %indirect))
                to label %fallthrough [label %indirect]
@@ -399,7 +399,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -489,7 +489,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -524,7 +524,7 @@ dispatch2:
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -576,7 +576,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -605,7 +605,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -636,7 +636,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -665,7 +665,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -698,7 +698,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -732,7 +732,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -780,7 +780,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -827,7 +827,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -859,7 +859,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -891,7 +891,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -923,7 +923,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -955,7 +955,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -987,7 +987,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1019,7 +1019,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1055,7 +1055,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1164,7 +1164,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1284,7 +1284,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1401,7 +1401,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1462,7 +1462,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1524,7 +1524,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1597,7 +1597,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1635,7 +1635,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1685,7 +1685,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1932,7 +1932,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -1969,7 +1969,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2056,7 +2056,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2115,7 +2115,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2168,7 +2168,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2221,7 +2221,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2268,7 +2268,7 @@ done:
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2412,7 +2412,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2483,7 +2483,7 @@ entry:
             (type_keyword))
           (type
             (local_var))))))
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2570,7 +2570,7 @@ define i32* @foo(%struct.ST* %s) {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -2739,27 +2739,27 @@ define void @main() {
   %eptr = getelementptr [12 x i8], [12 x i8]* %aptr, i64 0, i32 1
   ; yields i32*:iptr
   %iptr = getelementptr [10 x i32], [10 x i32]* @arr, i16 0, i16 0
-  
+
   ; All arguments are vectors:
   ;   A[i] = ptrs[i] + offsets[i]*sizeof(i8)
   %A = getelementptr i8, <4 x i8*> %ptrs, <4 x i64> %offsets
-  
+
   ; Add the same scalar offset to each pointer of a vector:
   ;   A[i] = ptrs[i] + offset*sizeof(i8)
   %A = getelementptr i8, <4 x i8*> %ptrs, i64 %offset
-  
+
   ; Add distinct offsets to the same pointer:
   ;   A[i] = ptr + offsets[i]*sizeof(i8)
   %A = getelementptr i8, i8* %ptr, <4 x i64> %offsets
-  
+
   ; In all cases described above the type of the result is <4 x i8*>
-  
+
   getelementptr  %struct.ST, <4 x %struct.ST*> %s, <4 x i64> %ind1,
     <4 x i32> <i32 2, i32 2, i32 2, i32 2>,
     <4 x i32> <i32 1, i32 1, i32 1, i32 1>,
     <4 x i32> %ind4,
     <4 x i64> <i64 13, i64 13, i64 13, i64 13>
-  
+
   getelementptr  %struct.ST, <4 x %struct.ST*> %s, <4 x i64> %ind1,
     i32 2, i32 1, <4 x i32> %ind4, i64 13
 }
@@ -2767,7 +2767,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3188,7 +3188,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3282,7 +3282,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3369,7 +3369,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3443,7 +3443,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3516,7 +3516,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3560,7 +3560,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3606,7 +3606,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3663,7 +3663,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3719,7 +3719,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3763,7 +3763,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3808,7 +3808,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3877,7 +3877,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -3956,7 +3956,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -4040,7 +4040,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -4119,7 +4119,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -4215,7 +4215,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -4285,7 +4285,7 @@ Loop:       ; Infinite loop that counts from 0 on up...
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -4339,7 +4339,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -4377,7 +4377,7 @@ define void @main() {
   %X = tail call i32 @foo()                                    ; yields i32
   %Y = tail call fastcc i32 @foo()  ; yields i32
   call void %foo(i8 signext 97)
-  
+
   %r = call %struct.A @foo()                        ; yields { i32, i8 }
   %gr = extractvalue %struct.A %r, 0                ; yields i32
   %gr1 = extractvalue %struct.A %r, 1               ; yields i8
@@ -4397,7 +4397,7 @@ define void @main() {
             (type_keyword))
           (type
             (type_keyword))))))
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -4560,7 +4560,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -4664,7 +4664,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
@@ -4749,7 +4749,7 @@ define void @main() {
 --------------------------------------------------------------------------------
 
 (module
-  (define
+  (fn_define
     (function_header
       (type
         (type_keyword))
