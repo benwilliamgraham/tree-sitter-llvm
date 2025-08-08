@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/benwilliamgraham/tree-sitter-llvm#readme",
   "dependencies": {
-    "node-addon-api": "^7.1.0",
-    "node-gyp-build": "^4.8.0"
+    "node-addon-api": "^8.5.0",
+    "node-gyp-build": "^4.8.4"
   },
   "peerDependencies": {
     "tree-sitter": "^0.21.0"
@@ -32,8 +32,8 @@
     }
   },
   "devDependencies": {
-    "prettier": "2.4.1",
-    "tree-sitter-cli": "^0.20.0",
+    "prettier": "3.6.2",
+    "tree-sitter-cli": "^0.25.8",
     "prebuildify": "^6.0.0"
   },
   "files": [
