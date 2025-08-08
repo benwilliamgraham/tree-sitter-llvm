@@ -27,54 +27,54 @@ updates:
             npm:
                 patterns: [ "*" ]
 
-    # - package-ecosystem: cargo
-    #   directory: /
-    #   schedule:
-    #     interval: weekly
-    #     day: sunday
-    #   commit-message:
-    #     prefix: build(deps)
-    #   labels:
-    #     - dependencies
-    #   groups:
-    #     cargo:
-    #       patterns: ["*"]
+    -   package-ecosystem: cargo
+        directory: /
+        schedule:
+            interval: weekly
+            day: sunday
+        commit-message:
+            prefix: build(deps)
+        labels:
+            - dependencies
+        groups:
+            cargo:
+                patterns: [ "*" ]
 
-    # - package-ecosystem: pip
-    #   directory: /
-    #   schedule:
-    #     interval: weekly
-    #     day: sunday
-    #   commit-message:
-    #     prefix: build(deps)
-    #   labels:
-    #     - dependencies
-    #   groups:
-    #     pip:
-    #       patterns: ["*"]
+    -   package-ecosystem: pip
+        directory: /
+        schedule:
+            interval: weekly
+            day: sunday
+        commit-message:
+            prefix: build(deps)
+        labels:
+            - dependencies
+        groups:
+            pip:
+                patterns: [ "*" ]
 
-    # - package-ecosystem: swift
-    #   directory: /
-    #   schedule:
-    #     interval: weekly
-    #     day: sunday
-    #   commit-message:
-    #     prefix: build(deps)
-    #   labels:
-    #     - dependencies
-    #   groups:
-    #     swift:
-    #       patterns: ["*"]
+    -   package-ecosystem: swift
+        directory: /
+        schedule:
+            interval: weekly
+            day: sunday
+        commit-message:
+            prefix: build(deps)
+        labels:
+            - dependencies
+        groups:
+            swift:
+                patterns: [ "*" ]
 
-    # - package-ecosystem: gomod
-    #   directory: /
-    #   schedule:
-    #     interval: weekly
-    #     day: sunday
-    #   commit-message:
-    #     prefix: build(deps)
-    #   labels:
-    #     - dependencies
-    #   groups:
-    #     go:
-    #       patterns: ["*"]
+    -   package-ecosystem: gomod
+        directory: /
+        schedule:
+            interval: weekly
+            day: sunday
+        commit-message:
+            prefix: build(deps)
+        labels:
+            - dependencies
+        groups:
+            go:
+                patterns: [ "*" ]
